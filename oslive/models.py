@@ -1,15 +1,13 @@
 from datetime import timezone
 
-from django.db import models
-
-# Create your models here.
-
 from django.contrib.auth.models import User
 from django.db import models
 
 
 # Create your models here.
-from django.forms import forms
+
+
+# Create your models here.
 
 
 class Academico(models.Model):
@@ -66,11 +64,11 @@ class Questoes(models.Model):
         (D, 'D'),
     )
 
-    enunciado = models.TextField(max_length=100, null=True)
-    alternativaA = models.TextField(max_length=100, null=True)
-    alternativaB = models.TextField(max_length=100, null=True)
-    alternativaC = models.TextField(max_length=100, null=True)
-    alternativaD = models.TextField(max_length=100, null=True)
+    enunciado = models.TextField(max_length=70, null=True)
+    alternativaA = models.TextField(max_length=50, null=True)
+    alternativaB = models.TextField(max_length=50, null=True)
+    alternativaC = models.TextField(max_length=50, null=True)
+    alternativaD = models.TextField(max_length=50, null=True)
     nivel = models.IntegerField(choices=NIVEL, default=FACIL)
     anexo = models.ForeignKey(Anexo, on_delete=models.CASCADE)
 
